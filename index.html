@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Durable Phone Repair - Quote Calculator</title>
+        <style>
+            body {
+                background-color: #0a1628;
+                color: white;
+                font-family: Lato, sans-serif;
+            }
+            button {
+                background-color: #1a6fd4;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            h1 {
+                color: #1a6fd4;
+            }
+            h2 {
+                color: #1a6fd4;
+            }
+            body {
+                padding: 30px;
+            }
+            #appleResult {
+                color: #1a6fd4;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            #samsungResult {
+                color: #1a6fd4;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        </style>
+        <script>
+            function getQuote() {
+                var model = document.getElementById("model").value 
+                var repair = document.getElementById("repair").value 
+
+                var prices = {
+                    "iPhone XR": {"Screen Replacement": "$99.99", "Battery Replacement": "$49.99"},
+                    "iPhone 11": {"Screen Replacement": "$99.99", "Battery Replacement": "$49.99"},
+                    "iPhone 12": {"Screen Replacement": "$129.99", "Battery Replacement": "$54.99"},
+                    "iPhone 13": {"Screen Replacement": "$129.99", "Battery Replacement": "$59.99"}
+                }
+                
+                var price = prices[model][repair]
+                document.getElementById("appleResult").innerHTML = "Price for " + model + " " + repair + ": " + price
+            }
+            function getSamsungQuote() {
+                var model =document.getElementById("samsungModel").value 
+                var repair = document.getElementById("samsungRepair").value 
+
+                var prices = {
+                    "Samsung A03s": {"Screen Replacement": "$54.99", "Battery Replacement": "$35.99"},
+                    "Samsung A13": {"Screen Replacement": "$54.99", "Battery Replacement": "$35.99"},
+                    "Samsung A14": {"Screen Replacement": "$54.99", "Battery Replacement": "$35.99"},
+                    "Samsung A15": {"Screen Replacement": "$89.99", "Battery Replacement": "$35.99"},
+                    "Samsung S21": {"Screen Replacement": "$129.99", "Battery Replacement": "$46.99"},
+                    "Samsung S22": {"Screen Replacement": "$159.99", "Battery Replacement": "$51.99"},
+                    "Samsung S23": {"Screen Replacement": "$169.99", "Battery Replacement": "$55.99"}
+                }
+
+                var price = prices[model][repair]
+                document.getElementById("samsungResult").innerHTML = "Price for " + model + " " + repair + ": " + price
+            }
+        </script>
+    </head>
+<body>
+    <h1>Get a Repair Quote</h1>
+    <h2>Apple Repairs</h2>
+    <p>Select your iPhone model:</p>
+    <select id="model">
+        <option>iPhone XR</option>
+        <option>iPhone 11</option>
+        <option>iPhone 12</option>
+        <option>iPhone 13</option>
+    </select>
+    <p>Select repair type:</p>
+    <select id="repair">
+        <option>Screen Replacement</option>
+        <option>Battery Replacement</option>
+    </select>
+    <button onclick="getQuote()">Get Quote</button>
+    <p id="appleResult"></p>
+    <h2>Samsung Repairs</h2>
+    <p>Select your Samsung model:</p>
+    <select id="samsungModel">
+        <option>Samsung A03s</option>
+        <option>Samsung A13</option>
+        <option>Samsung A14</option>
+        <option>Samsung A15</option>
+        <option>Samsung S21</option>
+        <option>Samsung S22</option>
+        <option>Samsung S23</option>
+    </select>
+    <p>Select repair type:</p>
+    <select id="samsungRepair">
+        <option>Screen Replacement</option>
+        <option>Battery Replacement</option>
+    </select>
+    <button onclick="getSamsungQuote()">Get Quote</button>
+    <p id="samsungResult"></p>
+</body>
+</html>
