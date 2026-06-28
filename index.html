@@ -93,6 +93,7 @@
                 var price = prices[model][repair]
                 document.getElementById("appleResult").innerHTML = "Price for " + model + " " + repair + ": " + price
                 document.getElementById("appleBook").style.display = "block"
+                document.getElementById("appleBook").href = "sms:4028048820?body=Hi, I'd like to book a " + model + " " + repair
             }
             function getSamsungQuote() {
                 var model =document.getElementById("samsungModel").value 
@@ -111,6 +112,7 @@
                 var price = prices[model][repair]
                 document.getElementById("samsungResult").innerHTML = "Price for " + model + " " + repair + ": " + price
                 document.getElementById("samsungBook").style.display = "block"
+                document.getElementById("samsungBook").href = "sms:4028048820?body=Hi, I'd like to book a " + model + " " + repair
             }
         </script>
     </head>
